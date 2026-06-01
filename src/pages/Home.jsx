@@ -55,14 +55,14 @@ export default function Home() {
         <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-[#0A4A2E]/60 blur-3xl" />
         <div className="absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-[#C8E63C]/10 blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 w-full relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24 sm:py-32 w-full relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-[#C8E63C]/30 rounded-full bg-[#C8E63C]/10 mb-8"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-[#C8E63C]/30 rounded-full bg-[#C8E63C]/10 mb-6 sm:mb-8 backdrop-blur-sm"
               >
                 <RiLeafLine className="text-[#C8E63C]" size={14} />
                 <span className="text-xs font-600 tracking-widest uppercase text-[#C8E63C]">
@@ -74,7 +74,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-5xl lg:text-7xl font-['Playfair_Display'] font-800 text-white leading-[1.05] mb-6"
+                className="text-4xl sm:text-5xl lg:text-7xl font-['Playfair_Display'] font-800 text-white leading-[1.1] sm:leading-[1.05] mb-6"
               >
                 Premium{" "}
                 <span className="text-[#C8E63C]">Cleaning</span>{" "}
@@ -85,7 +85,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-white/70 leading-relaxed mb-10 max-w-lg"
+                className="text-base sm:text-lg text-white/70 leading-relaxed mb-8 sm:mb-10 max-w-lg"
               >
                 Manufacturer and supplier of high-quality hygiene products for
                 homes, businesses, hotels, hospitals, and commercial establishments
@@ -96,18 +96,18 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-3 sm:gap-4"
               >
                 <Link
                   to="/products"
-                  className="flex items-center gap-2 px-7 py-3.5 bg-[#C8E63C] text-[#0A4A2E] font-600 rounded-xl hover:bg-[#d4f040] transition-colors text-sm"
+                  className="flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-gradient-to-r from-[#C8E63C] to-[#d4f040] text-[#0A4A2E] font-600 rounded-xl hover:shadow-lg hover:shadow-[#C8E63C]/30 transition-all duration-300 text-sm"
                 >
                   View Products
                   <RiArrowRightLine size={16} />
                 </Link>
                 <Link
                   to="/wholesale"
-                  className="flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-500 rounded-xl hover:bg-white/10 transition-colors text-sm"
+                  className="flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 border border-white/30 text-white font-500 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-sm backdrop-blur-sm"
                 >
                   Become a Distributor
                 </Link>
@@ -119,20 +119,20 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-3 sm:gap-4"
             >
               {stats.map((stat, i) => {
                 const Icon = statIcons[i];
                 return (
                   <div
                     key={stat.label}
-                    className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                    className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                   >
-                    <Icon className="text-[#C8E63C] mb-3" size={24} />
-                    <div className="text-4xl font-['Playfair_Display'] font-800 text-white mb-1">
+                    <Icon className="text-[#C8E63C] mb-2 sm:mb-3" size={20} sm:size={24} />
+                    <div className="text-3xl sm:text-4xl font-['Playfair_Display'] font-800 text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-white/50">{stat.label}</div>
+                    <div className="text-xs sm:text-sm text-white/50">{stat.label}</div>
                   </div>
                 );
               })}
@@ -149,25 +149,25 @@ export default function Home() {
       </section>
 
       {/* ── About Snapshot ── */}
-      <section className="py-20 bg-[#F7F9F4]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-20 bg-[#F7F9F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0A4A2E]/10 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0A4A2E]/10 rounded-full mb-4 sm:mb-6">
                 <RiStarLine className="text-[#0A4A2E]" size={12} />
                 <span className="text-xs font-600 tracking-widest uppercase text-[#0A4A2E]">
                   About Us
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-['Playfair_Display'] font-700 text-[#0D1A12] leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Playfair_Display'] font-700 text-[#0D1A12] leading-tight mb-4 sm:mb-6">
                 Trusted Cleaning Products, Built for India
               </h2>
-              <p className="text-[#5A6B5F] leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-[#5A6B5F] leading-relaxed mb-4 sm:mb-6">
                 Krithiv Enterprise manufactures high-quality cleaning and hygiene products
                 designed for homes, offices, hotels, restaurants, hospitals, and commercial
                 establishments. We combine effective formulas with competitive pricing to serve
@@ -179,7 +179,7 @@ export default function Home() {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-[#0A4A2E] font-600 text-sm border-b-2 border-[#C8E63C] pb-0.5 hover:border-[#0A4A2E] transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-[#0A4A2E] font-600 border-b-2 border-[#C8E63C] pb-0.5 hover:border-[#0A4A2E] transition-colors"
               >
                 Our Full Story
                 <RiArrowRightLine size={15} />
@@ -194,7 +194,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-[#0A4A2E] rounded-3xl p-10 text-white relative overflow-hidden">
+              <div className="bg-[#0A4A2E] rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden shadow-xl shadow-[#0A4A2E]/20">
                 <div
                   className="absolute inset-0 opacity-5"
                   style={{
@@ -203,7 +203,7 @@ export default function Home() {
                     backgroundSize: "28px 28px",
                   }}
                 />
-                <blockquote className="text-2xl font-['Playfair_Display'] font-500 leading-relaxed mb-6 relative">
+                <blockquote className="text-xl sm:text-2xl font-['Playfair_Display'] font-500 leading-relaxed mb-4 sm:mb-6 relative">
                   "To become a trusted cleaning and hygiene products brand across every home and business in India."
                 </blockquote>
                 <div className="flex items-center gap-3">
@@ -222,23 +222,23 @@ export default function Home() {
       </section>
 
       {/* ── Products ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4"
+            className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0A4A2E]/10 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0A4A2E]/10 rounded-full mb-3 sm:mb-4">
                 <RiLeafLine className="text-[#0A4A2E]" size={12} />
                 <span className="text-xs font-600 tracking-widest uppercase text-[#0A4A2E]">
                   Our Products
                 </span>
               </div>
-              <h2 className="text-4xl font-['Playfair_Display'] font-700 text-[#0D1A12]">
+              <h2 className="text-3xl sm:text-4xl font-['Playfair_Display'] font-700 text-[#0D1A12]">
                 Seven Categories, One Source
               </h2>
             </div>
@@ -250,7 +250,7 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {products.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
             ))}
@@ -259,14 +259,14 @@ export default function Home() {
       </section>
 
       {/* ── Why Us ── */}
-      <section className="py-20 bg-[#F7F9F4]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-20 bg-[#F7F9F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0A4A2E]/10 rounded-full mb-4">
               <RiShieldCheckLine className="text-[#0A4A2E]" size={12} />
@@ -274,12 +274,12 @@ export default function Home() {
                 Why Choose Us
               </span>
             </div>
-            <h2 className="text-4xl font-['Playfair_Display'] font-700 text-[#0D1A12] max-w-lg mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-['Playfair_Display'] font-700 text-[#0D1A12] max-w-lg mx-auto">
               The Krithiv Difference
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {whyUs.map((item, i) => {
               const Icon = whyIcons[i];
               return (
@@ -290,15 +290,15 @@ export default function Home() {
                   whileInView="show"
                   custom={i}
                   viewport={{ once: true }}
-                  className="bg-white border border-[#D4E2D8] rounded-2xl p-6 hover:shadow-lg hover:border-[#0A4A2E]/20 transition-all duration-300 group"
+                  className="bg-white border border-[#D4E2D8] rounded-2xl p-4 sm:p-6 hover:shadow-lg hover:border-[#0A4A2E]/20 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#0A4A2E]/10 flex items-center justify-center mb-4 group-hover:bg-[#0A4A2E] transition-colors">
-                    <Icon className="text-[#0A4A2E] group-hover:text-[#C8E63C] transition-colors" size={22} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0A4A2E]/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#0A4A2E] transition-colors">
+                    <Icon className="text-[#0A4A2E] group-hover:text-[#C8E63C] transition-colors" size={18} sm:size={22} />
                   </div>
-                  <h3 className="font-['Playfair_Display'] font-600 text-[#0D1A12] text-lg mb-2">
+                  <h3 className="font-['Playfair_Display'] font-600 text-[#0D1A12] text-base sm:text-lg mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#5A6B5F] leading-relaxed">{item.desc}</p>
+                  <p className="text-xs sm:text-sm text-[#5A6B5F] leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}
@@ -307,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-[#0A4A2E] relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-[#0A4A2E] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -316,18 +316,18 @@ export default function Home() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-['Playfair_Display'] font-700 text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Playfair_Display'] font-700 text-white mb-3 sm:mb-4 leading-tight">
                 Ready to Partner with Us?
               </h2>
-              <p className="text-white/70 leading-relaxed text-lg">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
                 Join our growing network of distributors and retailers. Get attractive
                 margins, reliable supply, and dedicated support.
               </p>
@@ -338,18 +338,18 @@ export default function Home() {
               whileInView="show"
               custom={1}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
               <Link
                 to="/wholesale"
-                className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#C8E63C] text-[#0A4A2E] font-600 rounded-xl hover:bg-[#d4f040] transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 py-3.5 sm:py-4 bg-gradient-to-r from-[#C8E63C] to-[#d4f040] text-[#0A4A2E] font-600 rounded-xl hover:shadow-lg hover:shadow-[#C8E63C]/30 transition-all duration-300"
               >
                 Become a Distributor
                 <RiArrowRightLine size={16} />
               </Link>
               <Link
                 to="/contact"
-                className="flex-1 flex items-center justify-center gap-2 py-4 border border-white/30 text-white font-500 rounded-xl hover:bg-white/10 transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 py-3.5 sm:py-4 border border-white/30 text-white font-500 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
               >
                 Contact Us
               </Link>

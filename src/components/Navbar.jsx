@@ -39,26 +39,26 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-[#0A4A2E] flex items-center justify-center group-hover:scale-105 transition-transform">
-              <RiLeafLine className="text-[#C8E63C] text-lg" />
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0A4A2E] to-[#0d6b42] flex items-center justify-center group-hover:scale-105 transition-transform shadow-lg shadow-[#0A4A2E]/20">
+              <RiLeafLine className="text-[#C8E63C] text-lg sm:text-xl" />
             </div>
             <div>
-              <span className="font-['Playfair_Display'] font-700 text-[#0A4A2E] text-lg leading-none block">
+              <span className="font-['Playfair_Display'] font-700 text-[#0A4A2E] text-lg sm:text-xl leading-none block">
                 Krithiv
               </span>
-              <span className="text-[10px] font-500 tracking-[0.15em] text-[#5A6B5F] uppercase leading-none block">
+              <span className="text-[10px] sm:text-[11px] font-500 tracking-[0.15em] text-[#5A6B5F] uppercase leading-none block">
                 Enterprise
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className={`text-sm font-500 tracking-wide transition-colors relative group ${
+                  className={`text-sm font-500 tracking-wide transition-all duration-300 relative group ${
                     location.pathname === link.to
                       ? "text-[#0A4A2E]"
                       : "text-[#5A6B5F] hover:text-[#0A4A2E]"
@@ -79,7 +79,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               to="/wholesale"
-              className="px-5 py-2.5 bg-[#0A4A2E] text-white text-sm font-500 rounded-lg hover:bg-[#0d6b42] transition-colors"
+              className="px-5 py-2.5 bg-gradient-to-r from-[#0A4A2E] to-[#0d6b42] text-white text-sm font-500 rounded-lg hover:shadow-lg hover:shadow-[#0A4A2E]/30 transition-all duration-300"
             >
               Become a Distributor
             </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-[#0A4A2E] hover:bg-[#D4E2D8] transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-[#0A4A2E] hover:bg-[#D4E2D8] transition-colors active:scale-95"
           >
             {menuOpen ? <RiCloseLine size={22} /> : <RiMenuLine size={22} />}
           </button>
@@ -103,10 +103,10 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white md:hidden"
+            className="fixed inset-0 z-40 bg-gradient-to-br from-white to-[#F7F9F4] md:hidden"
           >
-            <div className="flex flex-col h-full pt-24 px-8">
-              <ul className="flex flex-col gap-6">
+            <div className="flex flex-col h-full pt-28 px-6 sm:px-8">
+              <ul className="flex flex-col gap-5 sm:gap-6">
                 {navLinks.map((link, i) => (
                   <motion.li
                     key={link.to}
@@ -116,7 +116,7 @@ export default function Navbar() {
                   >
                     <Link
                       to={link.to}
-                      className={`text-3xl font-['Playfair_Display'] font-600 ${
+                      className={`text-3xl sm:text-4xl font-['Playfair_Display'] font-600 transition-colors ${
                         location.pathname === link.to ? "text-[#0A4A2E]" : "text-[#1C2B21]"
                       }`}
                     >
@@ -128,7 +128,7 @@ export default function Navbar() {
               <div className="mt-10">
                 <Link
                   to="/wholesale"
-                  className="inline-block w-full text-center px-6 py-4 bg-[#0A4A2E] text-white font-500 rounded-xl text-lg"
+                  className="inline-block w-full text-center px-6 py-4 bg-gradient-to-r from-[#0A4A2E] to-[#0d6b42] text-white font-500 rounded-xl text-lg shadow-lg shadow-[#0A4A2E]/20"
                 >
                   Become a Distributor
                 </Link>

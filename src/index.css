@@ -1,28 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --color-primary: #0A4A2E;
-  --color-primary-light: #0d6b42;
-  --color-accent: #C8E63C;
-  --color-accent-dark: #a8c420;
-  --color-surface: #F7F9F4;
-  --color-dark: #0D1A12;
-  --color-text: #1C2B21;
-  --color-text-muted: #5A6B5F;
-  --color-border: #D4E2D8;
-  --color-white: #FFFFFF;
-}
+@layer base {
+  :root {
+    --color-primary: #0A4A2E;
+    --color-primary-light: #0d6b42;
+    --color-accent: #C8E63C;
+    --color-accent-dark: #a8c420;
+    --color-surface: #F7F9F4;
+    --color-dark: #0D1A12;
+    --color-text: #1C2B21;
+    --color-text-muted: #5A6B5F;
+    --color-border: #D4E2D8;
+    --color-white: #FFFFFF;
+  }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  overflow-x: hidden;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-surface); }
+  ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
 }
-h1, h2, h3 { font-family: 'Playfair Display', serif; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-surface); }
-::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
