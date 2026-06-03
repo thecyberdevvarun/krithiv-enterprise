@@ -22,7 +22,7 @@ export default function ProductDetail() {
       {/* Header band */}
       <div
         className="pt-28 pb-16 relative overflow-hidden"
-        style={{ backgroundColor: product.colorAccent + "18" }}
+        style={{ backgroundColor: product?.colorAccent + "18" }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <Link
@@ -42,15 +42,15 @@ export default function ProductDetail() {
             >
               <span
                 className="inline-block text-xs font-600 tracking-widest uppercase px-3 py-1.5 rounded-full mb-4"
-                style={{ backgroundColor: product.colorAccent + "20", color: product.colorAccent }}
+                style={{ backgroundColor: product?.colorAccent + "20", color: product?.colorAccent }}
               >
-                {product.category}
+                {product?.category}
               </span>
               <h1 className="text-5xl font-['Playfair_Display'] font-800 text-[#0D1A12] mb-3">
-                {product.name}
+                {product?.name}
               </h1>
-              <p className="text-xl text-[#5A6B5F] mb-6">{product.tagline}</p>
-              <p className="text-[#5A6B5F] leading-relaxed mb-8">{product.description}</p>
+              <p className="text-xl text-[#5A6B5F] mb-6">{product?.tagline}</p>
+              <p className="text-[#5A6B5F] leading-relaxed mb-8">{product?.description}</p>
 
               {/* Sizes */}
               <div className="mb-8">
@@ -58,11 +58,11 @@ export default function ProductDetail() {
                   Available Sizes
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {product.sizes.map((s) => (
+                  {product?.sizes.map((s) => (
                     <span
                       key={s}
                       className="px-4 py-2 bg-white border-2 rounded-lg text-sm font-600 text-[#0D1A12]"
-                      style={{ borderColor: product.colorAccent + "60" }}
+                      style={{ borderColor: product?.colorAccent + "60" }}
                     >
                       {s}
                     </span>
@@ -74,7 +74,7 @@ export default function ProductDetail() {
                 <Link
                   to="/contact"
                   className="flex items-center gap-2 px-7 py-3.5 text-white font-600 rounded-xl text-sm transition-colors"
-                  style={{ backgroundColor: product.colorAccent }}
+                  style={{ backgroundColor: product?.colorAccent }}
                 >
                   Request a Quote
                   <RiArrowRightLine size={16} />
@@ -95,22 +95,20 @@ export default function ProductDetail() {
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <div
-                className="rounded-3xl p-10 flex items-center justify-center min-h-64 relative overflow-hidden"
-                style={{ backgroundColor: product.colorAccent + "15" }}
+                className="rounded-3xl p-8 sm:p-10 flex items-center justify-center min-h-64 relative overflow-hidden bg-gradient-to-br from-white to-[#F7F9F4]"
               >
                 <div
-                  className="absolute inset-0 opacity-10"
+                  className="absolute inset-0 opacity-5"
                   style={{
-                    backgroundImage: `radial-gradient(circle at 1px 1px, ${product.colorAccent} 1px, transparent 0)`,
+                    backgroundImage: `radial-gradient(circle at 1px 1px, ${product?.colorAccent} 1px, transparent 0)`,
                     backgroundSize: "24px 24px",
                   }}
                 />
-                <div
-                  className="w-40 h-40 rounded-full flex items-center justify-center relative z-10"
-                  style={{ backgroundColor: product.colorAccent + "30" }}
-                >
-                  <RiLeafLine style={{ color: product.colorAccent }} size={64} />
-                </div>
+                <img
+                  src={product?.image}
+                  alt={product?.name}
+                  className="w-full h-64 sm:h-80 object-contain relative z-10"
+                />
               </div>
             </motion.div>
           </div>
@@ -131,13 +129,13 @@ export default function ProductDetail() {
               Key Benefits
             </h2>
             <ul className="space-y-3">
-              {product.benefits.map((b) => (
+              {product?.benefits.map((b) => (
                 <li key={b} className="flex items-center gap-3">
                   <div
                     className="w-6 h-6 rounded-full flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: product.colorAccent + "20" }}
+                    style={{ backgroundColor: product?.colorAccent + "20" }}
                   >
-                    <RiCheckLine style={{ color: product.colorAccent }} size={13} />
+                    <RiCheckLine style={{ color: product?.colorAccent }} size={13} />
                   </div>
                   <span className="text-sm text-[#1C2B21]">{b}</span>
                 </li>
@@ -155,7 +153,7 @@ export default function ProductDetail() {
             <h2 className="font-['Playfair_Display'] font-700 text-[#0D1A12] text-xl mb-5">
               How to Use
             </h2>
-            <p className="text-sm text-[#5A6B5F] leading-relaxed">{product.directions}</p>
+            <p className="text-sm text-[#5A6B5F] leading-relaxed">{product?.directions}</p>
           </motion.div>
 
           {/* CTA card */}
@@ -206,10 +204,13 @@ export default function ProductDetail() {
                 className="bg-white border border-[#D4E2D8] rounded-xl p-5 flex items-center gap-4 hover:border-[#0A4A2E]/30 hover:shadow-md transition-all group"
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: p.colorAccent + "15" }}
+                  className="w-16 h-16 rounded-xl flex items-center justify-center shrink-0 bg-gradient-to-br from-[#F7F9F4] to-[#E8EFE8] overflow-hidden"
                 >
-                  <RiLeafLine style={{ color: p.colorAccent }} size={22} />
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-contain p-2"
+                  />
                 </div>
                 <div>
                   <div className="font-600 text-[#0D1A12] text-sm group-hover:text-[#0A4A2E] transition-colors">

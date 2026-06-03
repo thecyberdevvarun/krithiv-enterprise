@@ -10,6 +10,7 @@ export const products = [
     directions: "Apply under the rim, leave for 5-10 minutes, then scrub and flush.",
     category: "Bathroom",
     colorAccent: "#2E7D52",
+    image: "/toilet.png",
   },
   {
     id: "hand-wash",
@@ -22,6 +23,7 @@ export const products = [
     directions: "Apply to wet hands, lather for 20 seconds, rinse thoroughly.",
     category: "Personal Care",
     colorAccent: "#1A6B8A",
+    image: "/hand.png",
   },
   {
     id: "dish-wash",
@@ -34,6 +36,7 @@ export const products = [
     directions: "Apply a small amount to sponge or directly on utensils, scrub, and rinse.",
     category: "Kitchen",
     colorAccent: "#8A6A1A",
+    image: "/dishwash.png",
   },
   {
     id: "floor-cleaner",
@@ -46,6 +49,7 @@ export const products = [
     directions: "Dilute 30 ml in 1 litre of water. Mop and leave to dry.",
     category: "Flooring",
     colorAccent: "#5A2E7D",
+    image: "/floor.png",
   },
   {
     id: "bathroom-cleaner",
@@ -58,6 +62,7 @@ export const products = [
     directions: "Spray on surface, leave for 2-3 minutes, scrub and rinse thoroughly.",
     category: "Bathroom",
     colorAccent: "#2E5E7D",
+    image: "/bathroom.png",
   },
   {
     id: "glass-cleaner",
@@ -70,6 +75,7 @@ export const products = [
     directions: "Spray on glass surface, wipe with a clean microfiber cloth in circular motion.",
     category: "Glass & Surfaces",
     colorAccent: "#1A7A8A",
+    image: "/glass.png",
   },
   {
     id: "car-wash",
@@ -82,6 +88,7 @@ export const products = [
     directions: "Mix 30-50 ml in a bucket of water. Wash car using a sponge or mitt, rinse thoroughly.",
     category: "Automotive",
     colorAccent: "#7D2E2E",
+    image: "/car.png",
   },
 ];
 

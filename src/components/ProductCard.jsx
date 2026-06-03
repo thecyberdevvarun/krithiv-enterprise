@@ -26,10 +26,19 @@ export default function ProductCard({ product, index = 0 }) {
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className="group bg-white rounded-2xl overflow-hidden border border-[#D4E2D8] hover:border-[#0A4A2E]/30 hover:shadow-xl hover:shadow-[#0A4A2E]/10 transition-all duration-300"
     >
+      {/* Product Image */}
+<div className="relative h-48 sm:h-56 bg-white overflow-hidden flex items-center justify-center">
+  <img
+    src={product?.image}
+    alt={product?.name}
+    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+  />
+</div>
+
       {/* Color Band */}
       <div
         className="h-2 w-full"
-        style={{ backgroundColor: product.colorAccent }}
+        style={{ backgroundColor: product?.colorAccent }}
       />
 
       <div className="p-4 sm:p-6">
@@ -37,25 +46,25 @@ export default function ProductCard({ product, index = 0 }) {
         <div className="flex items-center gap-2 mb-3 sm:mb-4">
           <div
             className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ backgroundColor: `${product.colorAccent}18` }}
+            style={{ backgroundColor: `${product?.colorAccent}18` }}
           >
-            <Icon style={{ color: product.colorAccent }} size={16} />
+            <Icon style={{ color: product?.colorAccent }} size={16} />
           </div>
           <span className="text-[10px] sm:text-xs font-600 tracking-widest uppercase text-[#5A6B5F]">
-            {product.category}
+            {product?.category}
           </span>
         </div>
 
         <h3 className="text-lg sm:text-xl font-['Playfair_Display'] font-700 text-[#0D1A12] mb-2 group-hover:text-[#0A4A2E] transition-colors">
-          {product.name}
+          {product?.name}
         </h3>
         <p className="text-xs sm:text-sm text-[#5A6B5F] leading-relaxed mb-3 sm:mb-4 line-clamp-2">
-          {product.tagline}
+          {product?.tagline}
         </p>
 
         {/* Sizes */}
         <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-4 sm:mb-5">
-          {product.sizes.map((s) => (
+          {product?.sizes.map((s) => (
             <span
               key={s}
               className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-1 bg-[#F7F9F4] border border-[#D4E2D8] rounded-full text-[#5A6B5F] font-500"
@@ -67,11 +76,14 @@ export default function ProductCard({ product, index = 0 }) {
 
         {/* Benefits */}
         <ul className="space-y-1 sm:space-y-1.5 mb-4 sm:mb-6">
-          {product.benefits.slice(0, 2).map((b) => (
-            <li key={b} className="flex items-center gap-2 text-xs sm:text-sm text-[#1C2B21]">
+          {product?.benefits.slice(0, 2).map((b) => (
+            <li
+              key={b}
+              className="flex items-center gap-2 text-xs sm:text-sm text-[#1C2B21]"
+            >
               <div
                 className="w-1.5 h-1.5 rounded-full shrink-0"
-                style={{ backgroundColor: product.colorAccent }}
+                style={{ backgroundColor: product?.colorAccent }}
               />
               {b}
             </li>
@@ -80,11 +92,14 @@ export default function ProductCard({ product, index = 0 }) {
 
         <div className="flex gap-2 sm:gap-3">
           <Link
-            to={`/products/${product.id}`}
+            to={`/products/${product?.id}`}
             className="flex-1 flex items-center justify-center gap-2 py-2 sm:py-2.5 bg-gradient-to-r from-[#0A4A2E] to-[#0d6b42] text-white text-xs sm:text-sm font-500 rounded-lg hover:shadow-lg hover:shadow-[#0A4A2E]/30 transition-all duration-300 group/btn"
           >
             View Details
-            <RiArrowRightLine className="group-hover/btn:translate-x-0.5 transition-transform" size={14} />
+            <RiArrowRightLine
+              className="group-hover/btn:translate-x-0.5 transition-transform"
+              size={14}
+            />
           </Link>
           <Link
             to="/contact"
